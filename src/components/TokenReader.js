@@ -10,13 +10,13 @@ import { getAddressBalances } from 'eth-balance-checker/lib/ethers';
 import { NoWalletDetected } from "./NoWalletDetected";
 import { ConnectWallet } from "./ConnectWallet";
 
-import { yvDaiBytecode } from "../contracts/yvDAI";
+// import { yvDaiBytecode } from "../contracts/yvDAI";
 
 
 // This is the Hardhat Network id, you might change it in the hardhat.config.js
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
 // to use when deploying to other networks.
-const HARDHAT_NETWORK_ID = '31337';
+// const HARDHAT_NETWORK_ID = '31337';
 
 const supportedVaults = {
   'yvDAI' : '0xdA816459F1AB5631232FE5e97a05BBBb94970c95', // 18 Deccimals
@@ -145,7 +145,7 @@ export class TokenReader extends React.Component {
     // it takes the current wallet address and returns the balances of all tokens in the tokens arrary
     // balances are returned as a promise, once resolved we'll put them in the tokensAndBalances object
 
-    getAddressBalances(this._provider, this.state.selectedAddress.toString(), vaultAddresses) .then(balances => {
+    getAddressBalances(this._provider, this.state.selectedAddress.toString(), vaultAddresses).then(balances => {
       let tokenAddresses = [];
       let tokensAndBalances = {};
 
